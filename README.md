@@ -1,18 +1,90 @@
-# API Testing Project (Postman & ReqRes)
+# QA API Testing – Postman Project
 
-This project demonstrates professional API testing using Postman. It covers manual testing, HTTP methods validation, and documentation of test cases.
+## 📌 Overview
 
-##  Scope
-- Manual API testing (GET, POST, DELETE).
-- Validation of HTTP status codes (200, 204, 400, 401).
-- Documentation of Test Cases and Bug Reports.
+This project contains API tests created in **Postman** for a public REST API (JSONPlaceholder). The tests verify basic HTTP requests and responses to ensure correct API behavior.
 
-##  Tools
-- **Postman**: For sending requests and validating responses.
-- **GitHub**: For version control and documentation.
-- **ReqRes.in**: A hosted REST-API for testing.
+The project demonstrates fundamental skills in API testing, including sending requests and validating responses.
 
-##  Project Structure
-- `postman_collection.json`: Full collection of API requests.
-- `test-cases.md`: Structured test scenarios.
-- `bug-report.md`: Example of a professional bug report.
+---
+
+## 🧪 Tested API
+
+The tests are based on the public API:
+
+[https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
+
+This is a free fake REST API used for testing and learning purposes.
+
+---
+
+## 📂 Project Structure
+
+```
+qa-api-testing-postman/
+│
+├── collections/
+│   └── Postman collection file
+│
+├── environments/
+│   └── Postman environment file
+│
+└── README.md
+```
+
+---
+
+## ✅ Covered Test Scenarios
+
+### GET Requests
+
+* Retrieve all posts
+* Retrieve a single post by ID
+* Validate response status code
+* Validate response body structure
+
+### POST Requests
+
+* Create a new post
+* Validate response status code
+* Validate returned data
+
+### PUT Requests
+
+* Update an existing post
+* Validate response status code
+
+### DELETE Requests
+
+* Delete a post
+* Validate response status code
+
+---
+
+## 🧪 Example Test Script (Postman)
+
+```javascript
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response contains data", function () {
+    const jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an("object");
+});
+```
+
+---
+
+## ⚙️ How to Run
+
+1. Open Postman
+2. Import the collection file
+3. Import the environment file
+4. Run the collection using Collection Runner
+
+---
+
+## 👤 Author
+
+GitHub: [https://github.com/Kguzik04](https://github.com/Kguzik04)
